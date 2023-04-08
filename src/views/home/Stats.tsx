@@ -20,8 +20,13 @@ const Stats = () => {
         gap={10}
         wrap="wrap"
       >
-        {statsData.map((stats) => (
-          <StatsCard heading={stats.head} text={stats.text} icon={stats.icon} />
+        {statsData.map((stats, index) => (
+          <StatsCard
+            key={index}
+            heading={stats.head}
+            text={stats.text}
+            icon={stats.icon}
+          />
         ))}
       </Flex>
     </Flex>

@@ -27,8 +27,8 @@ const WorkSection = () => {
           </Heading>
         </Heading>
         <List spacing={4} pt={3}>
-          {daoWorkData.map((item) => (
-            <ListItem>
+          {daoWorkData.map((item, index) => (
+            <ListItem key={index}>
               <Text as="span" variant="2">
                 {item.text}
               </Text>

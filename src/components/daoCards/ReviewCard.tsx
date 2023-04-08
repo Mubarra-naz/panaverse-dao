@@ -23,7 +23,7 @@ const ReviewCard = ({ username, img, role, content }: reviewProps) => {
     <Card size="lg" p={3}>
       <CardBody>
         <Text variant="3" pb={6}>
-          "{content}"
+          {content}
         </Text>
         <Flex justify="space-between">
           <Flex gap={5}>
