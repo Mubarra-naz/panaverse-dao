@@ -20,25 +20,32 @@ import DaoButton from "../daoButton";
 import DaoIcon from "../daoIcon";
 import DaoLink from "../daoLink";
 import { BsBorderWidth } from "react-icons/bs";
+import { NavItem } from "@/utils/types";
+
+const NavLinkItem = ({ label, href }: NavItem) => {
+  return (
+    <Box
+      key={label}
+      borderBottomColor={{ base: "red.600", md: "none" }}
+      borderBottomWidth={{ base: 3, md: 0 }}
+    >
+      <DaoLink
+        fontSize="sm"
+        color={{ base: "red.600", md: "white" }}
+        href={href ?? "#"}
+        _hover={{ color: "pink" }}
+      >
+        {label}
+      </DaoLink>
+    </Box>
+  );
+};
 
 const NavLinks = () => {
   return (
     <>
       {NAV_ITEMS.map((nav) => (
-        <Box
-          key={nav.label}
-          borderBottomColor={{ base: "red.600", md: "none" }}
-          borderBottomWidth={{ base: 3, md: 0 }}
-        >
-          <DaoLink
-            fontSize="sm"
-            color={{ base: "red.600", md: "white" }}
-            href={nav.href ?? "#"}
-            _hover={{ color: "pink" }}
-          >
-            {nav.label}
-          </DaoLink>
-        </Box>
+        <NavLinkItem label={nav.label} href={nav.href} />
       ))}
     </>
   );
@@ -96,7 +103,7 @@ const Navbar = () => {
             <HStack
               flex={{ base: 1, md: "auto" }}
               justify={isOpen ? "space-between" : "end"}
-              align="start"
+              align="center"
               mr={2}
               display={{ base: "flex", md: "none" }}
             >
@@ -111,8 +118,13 @@ const Navbar = () => {
                   align="stretch"
                 >
                   <NavLinks />
+                  <NavLinkItem
+                    label="Apply"
+                    href="https://portal.piaic.org/signup"
+                  ></NavLinkItem>
                 </VStack>
               ) : null}
+
               <IconButton
                 onClick={onToggle}
                 bg="transparent"
@@ -122,7 +134,7 @@ const Navbar = () => {
                   isOpen ? (
                     <CloseIcon w={4} h={4} color="red.600" />
                   ) : (
-                    <HamburgerIcon w={6} h={6} color="red.600" />
+                    <HamburgerIcon w={8} h={8} color="red.600" mt={4} />
                   )
                 }
               />
