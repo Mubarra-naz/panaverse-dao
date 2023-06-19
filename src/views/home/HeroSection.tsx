@@ -47,8 +47,8 @@ const HeroSection = () => {
         >
           <Box
             position="absolute"
-            right="10%"
-            top={{ base: "5%", sm: "10%", md: "5%", lg: "-10%" }}
+            right={{ base: "none", md: "7%" }}
+            top={{ base: "5%", sm: "10%", md: "9%", lg: "-6%" }}
           >
             <Box
               bg="white"

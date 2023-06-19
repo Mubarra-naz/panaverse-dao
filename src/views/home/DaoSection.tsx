@@ -10,10 +10,10 @@ import DaoLink from "@/components/daoLink";
 const DaoSection = () => {
   return (
     <Flex
-      direction={{ base: "column", md: "row" }}
-      gap={14}
+      direction={{ base: "column", lg: "row" }}
+      gap={10}
       px={{ base: 6, md: 12 }}
-      py={{ base: 5, md: 20 }}
+      pt={{ base: 28, md: 48 }}
     >
       <Box py={8}>
         <Heading variant="1">
@@ -33,7 +33,13 @@ const DaoSection = () => {
           <DaoButton>Explore Panaverse DAO</DaoButton>
         </DaoLink>
       </Box>
-      <Box borderRadius="full" bg="red.600" pt={5}>
+      <Box
+        borderRadius="full"
+        bg="red.600"
+        minW="50%"
+        pt={{ base: 6, lg: 0 }}
+        mb={{ base: 20, lg: 0 }}
+      >
         <Image src={daoImg} alt="dao-img" />
       </Box>
     </Flex>

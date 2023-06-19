@@ -11,7 +11,7 @@ const WorkSection = () => {
       direction={{ base: "column", md: "row" }}
       gap={14}
       px={{ base: 6, md: 12 }}
-      py={{ base: 5, md: 20 }}
+      pt={{ base: 32 }}
     >
       <Box py={8}>
         <Image src={daoWorkImg} alt="dao-work-img" />

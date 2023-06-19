@@ -22,12 +22,12 @@ const Web3Section = () => {
       direction={{ base: "column", md: "row" }}
       gap={14}
       px={{ base: 6, md: 12 }}
-      py={{ base: 5, md: 20 }}
+      pt={{ base: 28, md: 48 }}
     >
-      <Box>
+      <Box minW="45%">
         <Image src={userOnComputer} alt="card-img"></Image>
       </Box>
-      <Box>
+      <Box pt={{ base: 20, md: 0 }}>
         <Heading variant="1" color="red.600">
           {web3Data.heading}
         </Heading>
@@ -53,7 +53,7 @@ const Web3Section = () => {
             </Text>
           </ListItem>
         </List>
-        <DaoButton color="white" bg="black">
+        <DaoButton color="white" bg="black" mt={12}>
           Read More
         </DaoButton>
       </Box>

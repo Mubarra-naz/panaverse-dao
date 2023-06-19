@@ -4,7 +4,14 @@ import { Flex, Heading, Text } from "@chakra-ui/react";
 
 const DaoSection = () => {
   return (
-    <Flex bg="black" direction="column" justify="center" align="center" p={14}>
+    <Flex
+      bg="black"
+      direction="column"
+      justify="center"
+      align="center"
+      px={14}
+      py={32}
+    >
       <Heading variant="1" color="white">
         {daoData.heading}
       </Heading>

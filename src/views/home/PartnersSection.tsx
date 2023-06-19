@@ -10,7 +10,7 @@ const PartnersSection = () => {
     <Flex
       direction={{ base: "column", md: "row" }}
       px={{ base: 6, md: 12 }}
-      py={{ base: 5, md: 20 }}
+      py={{ base: 28, md: 48 }}
       justify="space-around"
     >
       <Box>

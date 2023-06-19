@@ -10,7 +10,8 @@ const Stats = () => {
       bgGradient="linear(to-b, black 50%, red.600 50%)"
       justify="center"
       align="center"
-      p={20}
+      px={20}
+      py={32}
     >
       <Flex
         direction={{ base: "column", md: "row" }}

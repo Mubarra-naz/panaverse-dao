@@ -16,7 +16,12 @@ const HeroSection = () => {
       maxW="full"
     >
       <SimpleGrid columns={{ base: 1, md: 2 }}>
-        <Box px={{ base: 4, md: 12 }} py={{ base: 5, md: 28 }} zIndex="banner">
+        <Box
+          px={{ base: 4, md: 12 }}
+          pb={{ base: 5 }}
+          pt={{ base: 20 }}
+          zIndex="banner"
+        >
           <Heading variant="1" color="red.600">
             {heroData.head1}
             <Heading as="span" variant="1">
@@ -25,7 +30,7 @@ const HeroSection = () => {
           </Heading>
           <Text variant="2">{heroData.text}</Text>
         </Box>
-        <Box mr={-20} pt={{ base: 0, md: 10 }}>
+        <Box mr={-20} pt={{ base: 20 }}>
           <Image src={aboutImg} alt="hero-img" />
         </Box>
       </SimpleGrid>

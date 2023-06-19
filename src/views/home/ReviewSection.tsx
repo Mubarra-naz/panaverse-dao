@@ -7,7 +7,7 @@ import React from "react";
 import { BsFillChatRightQuoteFill } from "react-icons/bs";
 const ReviewSection = () => {
   return (
-    <Box px={{ base: 6, md: 12 }} py={{ base: 5, md: 20 }}>
+    <Box px={{ base: 6, md: 12 }} pt={{ base: 28, md: 48 }}>
       <Heading variant="1">{reviewData.heading}</Heading>
       <Flex direction="row" gap={14} py={5}>
         <Box display={{ base: "none", md: "block" }}>

@@ -9,7 +9,7 @@ import DaoLink from "@/components/daoLink";
 
 const TrainingSection = () => {
   return (
-    <SimpleGrid columns={2} px={{ base: 6, md: 12 }} py={{ base: 5, md: 10 }}>
+    <SimpleGrid columns={2} px={{ base: 6, md: 12 }} pt={{ base: 32 }}>
       <Box pt={8}>
         <Heading variant="1">
           {trainingData.head1}
