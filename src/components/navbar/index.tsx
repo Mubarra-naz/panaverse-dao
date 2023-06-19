@@ -10,7 +10,8 @@ import {
   IconButton,
   Link,
   useDisclosure,
-  Stack,
+  VStack,
+  StackDivider,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import NextLink from "next/link";
@@ -18,15 +19,20 @@ import { useEffect } from "react";
 import DaoButton from "../daoButton";
 import DaoIcon from "../daoIcon";
 import DaoLink from "../daoLink";
+import { BsBorderWidth } from "react-icons/bs";
 
 const NavLinks = () => {
   return (
     <>
       {NAV_ITEMS.map((nav) => (
-        <Box key={nav.label}>
+        <Box
+          key={nav.label}
+          borderBottomColor={{ base: "red.600", md: "none" }}
+          borderBottomWidth={{ base: 3, md: 0 }}
+        >
           <DaoLink
             fontSize="sm"
-            color="white"
+            color={{ base: "red.600", md: "white" }}
             href={nav.href ?? "#"}
             _hover={{ color: "pink" }}
           >
@@ -39,9 +45,9 @@ const NavLinks = () => {
 };
 
 const Navbar = () => {
-  const { isOpen, onToggle, onClose, onOpen } = useDisclosure();
+  const { isOpen, onToggle } = useDisclosure();
 
-  // useEffect(() => {}, [onToggle]);
+  useEffect(() => {}, [isOpen]);
   return (
     <Box
       bgGradient={{ base: "none", md: "linear(to-r, white 50%, red.600 50%)" }}
@@ -89,13 +95,26 @@ const Navbar = () => {
             </HStack>
             <HStack
               flex={{ base: 1, md: "auto" }}
-              justify="end"
-              ml={{ base: -2 }}
+              justify={isOpen ? "space-between" : "end"}
+              align="start"
+              mr={2}
               display={{ base: "flex", md: "none" }}
             >
+              {isOpen ? (
+                <VStack
+                  as="nav"
+                  role="presentation"
+                  minW="95%"
+                  display={{ base: "block", md: "none" }}
+                  p={4}
+                  spacing={5}
+                  align="stretch"
+                >
+                  <NavLinks />
+                </VStack>
+              ) : null}
               <IconButton
                 onClick={onToggle}
-                // onClick={isOpen ? onClose : onOpen}
                 bg="transparent"
                 variant={"ghost"}
                 aria-label={"Toggle Navigation"}
@@ -108,13 +127,6 @@ const Navbar = () => {
                 }
               />
             </HStack>
-            {/* {isOpen ? (
-              <Box display={{ base: "block", md: "none" }}>
-                <Stack as="nav" role="presentation" maxW="100%" spacing={4}>
-                  <NavLinks />
-                </Stack>
-              </Box>
-            ) : null} */}
           </Flex>
         </Flex>
       </Container>
