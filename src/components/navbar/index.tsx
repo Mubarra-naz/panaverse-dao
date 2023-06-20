@@ -25,7 +25,6 @@ import { NavItem } from "@/utils/types";
 const NavLinkItem = ({ label, href }: NavItem) => {
   return (
     <Box
-      key={label}
       borderBottomColor={{ base: "red.600", md: "none" }}
       borderBottomWidth={{ base: 3, md: 0 }}
     >
@@ -45,7 +44,7 @@ const NavLinks = () => {
   return (
     <>
       {NAV_ITEMS.map((nav) => (
-        <NavLinkItem label={nav.label} href={nav.href} />
+        <NavLinkItem label={nav.label} href={nav.href} key={nav.label} />
       ))}
     </>
   );
@@ -121,6 +120,7 @@ const Navbar = () => {
                   <NavLinkItem
                     label="Apply"
                     href="https://portal.piaic.org/signup"
+                    key="apply"
                   ></NavLinkItem>
                 </VStack>
               ) : null}
